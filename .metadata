@@ -1,0 +1,9 @@
+# This file tracks properties of this Flutter project.
+# Used by Flutter tool to assess project version and structure. These
+# fields should not be edited without keeping both in sync.
+
+version:
+  revision: 1.0.0
+  channel: stable
+
+project_type: app
