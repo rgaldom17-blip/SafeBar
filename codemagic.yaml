@@ -1,0 +1,21 @@
+workflows:
+  default-workflow:
+    name: SafeBar APK Builder
+    instance_type: mac_mini_m2
+    environment:
+      flutter: stable
+    scripts:
+      - name: 1. Generar la carpeta de Android
+        script: |
+          flutter create --platforms=android .
+          git checkout lib/main.dart
+      - name: 2. Instalar dependencias
+        script: flutter pub get
+      - name: 3. Compilar la app (APK)
+        script: flutter build apk --release
+    artifacts:
+      - build/app/outputs/flutter-apk/**/*.apk
+    publishing:
+      email:
+        recipients:
+          - rgaldom17@gmail.com
